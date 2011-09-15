@@ -1,0 +1,39 @@
+jBMM by Samneurohack
+samneurohack @ gmail com
+http://www.tmplab.org/wiki/index.php/Brain_Computer_Interface
+
+Source code of "Basic Mind Music", the musical part of a tmpbci/La paillasse installation at Macval (museum of contemporary art in France) on May 22nd 2011.
+High Gamma Brainwaves values are converted to sound spectrum thanks to a generative Pure Data Patch.
+
+INSTALL :
+
+Requirements : python, Rebol and ThinkGearconnector. 
+
+Install Rebol view 2.7.x, *note that rebol 3 is not supported* :
+http://www.rebol.com/download-view.html
+OS X: you may want to copy rebol in your PATH i.e to /usr/bin/
+
+Install Thinkgear Connector program form Mindset developper tools :
+http://store.neurosky.com/collections/development
+
+The Mindset headset must be paired via bluetooth utility. The correct Mindset bluetooth serial port must be configured in Thinkgear connector (usually in OS X: /dev/tty.Mindset-DevB).
+
+
+USAGE:
+
+OS X: 	
+		switch on and wear Mindset 
+		start Thinkgear connector (TGC)
+		The headset should connect to TGC
+		Double click Startup Icon
+		Double Click jBMM Icon
+		
+Windows:
+		switch on and wear Mindset
+		start Thinkgear connector (TGC)
+		connect TGC to headset
+		Doubleclick on jprocessing.r
+	
+
+
+
