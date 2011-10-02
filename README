@@ -2,38 +2,74 @@ jBMM by Samneurohack
 samneurohack @ gmail com
 http://www.tmplab.org/wiki/index.php/Brain_Computer_Interface
 
-Source code of "Basic Mind Music", the musical part of a tmpbci/La paillasse installation at Macval (museum of contemporary art in France) on May 22nd 2011.
-High Gamma Brainwaves values are converted to sound spectrum thanks to a generative Pure Data Patch.
+Source code of "Basic Mind Music", the musical part of a tmpbci/La paillasse installation at Macval (museum of contemporary art in France) on May 22nd 2011. High Gamma Brainwaves values are converted to sound spectrum thanks to a generative Pure Data Patch. 
 
-INSTALL :
+jBMM is alpha state, working correctly but definately not bulletproof : follow the instructions. Next versions won't need PureData and will be simplier to work with.
 
-Requirements : python, Rebol and ThinkGearconnector. 
+REQUIREMENTS
+INSTALL
+USAGE
+DISPLAYED MESSAGES
+
+
+
+REQUIREMENTS
+
+Rebol language (around 1 Mo) and ThinkGearconnector, MacOS or Windows.
+
+INSTALL
 
 Install Rebol view 2.7.x, *note that rebol 3 is not supported* :
 http://www.rebol.com/download-view.html
-OS X: you may want to copy rebol in your PATH i.e to /usr/bin/
 
-Install Thinkgear Connector program form Mindset developper tools :
+OS X: you may want to copy rebol in your PATH :
+
+cd youreboldownloadirectory
+sudo cp rebol /usr/local/bin/
+
+Install Thinkgear Connector program from Mindset Developper Tools :
 http://store.neurosky.com/collections/development
 
 The Mindset headset must be paired via bluetooth utility. The correct Mindset bluetooth serial port must be configured in Thinkgear connector (usually in OS X: /dev/tty.Mindset-DevB).
 
 
-USAGE:
+USAGE 
+
+To improve control capabilties : do not move and the frontal electrode should be one finger width above left eyebrow.
 
 OS X: 	
 		switch on and wear Mindset 
 		start Thinkgear connector (TGC)
-		The headset should connect to TGC
+		The headset should connect to TGC. If not : check headset or TGC parameters : usually /dev/tty.MindSet-DevB as port.
 		Double click Startup Icon
-		Double Click jBMM Icon
+		Double Click jBMM Icon, assuming rebol is in the PATH. Otherwise the terminal command is yourreboldirectory/rebol jbmm.r
+		
 		
 Windows:
 		switch on and wear Mindset
 		start Thinkgear connector (TGC)
 		connect TGC to headset
-		Doubleclick on jprocessing.r
+		Doubleclick on jbmm.r
+		
+Initializing: 
+	    When the pure data patch is correctly loaded, click on highGam checkbox : to be validated. 
+	    On jBMM UI click on pDATA to initiate the link with the Pure Data patch.
+	    
+Run:
+	    Start and Stop are obvious on jBMM User Interface.
+	    The user interface has a built in display line, that guide through the calibration process.
+	    VirtualLED is shown on top right and switch Green or Red according to the last 5 seconds average of High gamma wave value (high level mental task).
+	    The switching value can be changed : VirtualLED lvl. This value can be saved as preferences, using save button.
 	
 
+
+DISPLAYED MESSAGES
+
+		"Connected. Improve signal to calibrate" : One of 4 the electrodes is not correctly contacting skin -> move the headset / remove hairs on hears ...
+		"Calibrated" : all is fine, EEG data are processed.
+		"Send Data ON" : sending data to Pure Data patch is switched ON
+		"Send Data OFF" : sending data to Pure Data patch is switched OFF
+		"WRONG SIGNALS" : EEG datas are not correct, is the headset correctly wear ?
+		"TGC connexion error" : ThinkGear Connector provides buggy values, quit and restart Thinkgear Connector.
 
 
