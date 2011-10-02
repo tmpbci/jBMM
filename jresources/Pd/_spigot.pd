@@ -1,0 +1,10 @@
+#N canvas 195 99 450 300 10;
+#X obj 179 146 spigot;
+#X obj 212 121 != 0;
+#X obj 212 97 r onof\$1;
+#X obj 179 14 inlet;
+#X obj 179 250 outlet;
+#X connect 0 0 4 0;
+#X connect 1 0 0 1;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
